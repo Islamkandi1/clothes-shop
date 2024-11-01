@@ -1,0 +1,652 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-color: #6e6e6e8f;
+    
+}
+:root {
+    --transition-color: #023fc4;
+    --card-border: #6d6d6d;;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--transition-color);
+    padding: 5px 15px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 90000;
+}
+#deletebtn {
+    transition: .2s;
+}
+
+#deletebtn:active {
+    background-color: #fff;
+}
+ #buybtn {
+     transition: .1s ease-out;
+ }
+
+ #buybtn:active,
+  .cards .card .img-cart:active {
+     background-color: #fff;
+ }
+/* main */
+main {
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    
+}
+main nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+main nav .logo {
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+main nav .logo span {
+    color: #000;
+    font-size: 30px;
+    font-weight: 800;
+}
+i{
+visibility: hidden;
+}
+
+main nav ul {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    justify-content: space-between;
+    list-style: none;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 700;
+    padding-right: 20px;
+    margin-top: 5px;
+}
+
+main nav ul li a {
+    transition: .5s;
+}
+
+main nav ul li a:hover,
+footer .hero ul li a:hover {
+    color: var(--transition-color);
+}
+.menu {
+    cursor: pointer;
+    z-index: 1000;
+    padding: 20px 30px;
+    display: none;
+    width: fit-content;
+}
+
+.menu.change .up {
+    animation: down .4s ease-in-out forwards;
+}
+.showimg-cart {
+    cursor: pointer;
+}
+
+.cartitem {
+    width: 400px;
+    height: 100vh;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 50;
+}
+
+.showing {
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    margin: 0 10px;
+}
+
+.showing span {
+    position: absolute;
+    top: 5px;
+    background-color: var(--transition-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.ex {
+    cursor: pointer;
+}
+
+table {
+    margin: 25px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.td-img {
+    width: 70px;
+}
+
+td {
+    padding: 15px 0;
+}
+
+.hideallcart {
+    display: none;
+}
+
+td button {
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: var(--transition-color);
+    color: #fff;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.cartitem .buy {
+    width: 100%;
+    padding: 10px;
+}
+
+.cartitem .buy button {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: var(--transition-color);
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+}
+/* container */
+.container{
+    width: 100%;
+}
+.container .login-signup{
+    width: 60%;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    gap: 50px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+.container .login-signup .login,.container .login-signup .signup{
+    background-color: #fff;
+    width: 250px;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--transition-color); 
+}
+/* account-user */
+.account-user {
+    margin: 0 60px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+}
+.account-user .user-name{
+    color: var(--transition-color);
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+.account-user .email,.account-user .password{
+    color: var(--transition-color);
+    font-size: 18px;
+    font-weight: 700;
+}
+.account-user .email span ,.account-user .password span{
+    color: #fff;
+    text-transform: capitalize;
+
+}
+/* lastseen */
+.lastseen{
+    padding: 50px;
+    width: 100%;
+}
+.lastseen .after{
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    position: relative;
+}
+.lastseen .after::after{
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 3px;
+    bottom: -15px;
+    left: 0;
+    background-color: var(--transition-color);
+}
+.cards{
+width: 100%;
+margin-top: 50px;
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin: auto;
+cursor: pointer;
+margin-top: 50px;
+}
+.cards .card{
+width: 280px;   
+height: 300px;
+border: var(--card-border) 2px solid;
+overflow: hidden;
+position: relative;
+background-color: #fff;
+}
+.cards .card .into{
+    padding: 5px;
+    
+}
+.cards .card .price {
+    position: absolute;
+    left: 0;
+    width: fit-content;
+    bottom: 0;
+    padding: 0 15px;
+    background-color: var(--card-border);
+    border-radius: 0 8px 8px 0;
+    color: #fff;
+}
+
+.cards .card .price p {
+    text-align: left;
+    padding: 10px;
+    color: #fff;
+}
+.card .into .imge {
+    position: relative;
+    width: 50%;
+    height: 200px;
+    margin: auto;
+    z-index: 1;
+}
+ .card .into .imge img {
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.card .into p {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    word-spacing: 2px;
+    color: #000;
+    text-transform: capitalize;
+   
+}
+/* footer */
+footer {
+    background-color: var(--card-border);
+    padding: 25px;
+}
+
+footer .hero {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .hero ul li {
+    list-style: none;
+    margin: 15px 0;
+}
+
+footer .hero ul li a {
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transition: .5s;
+}
+
+footer .hero .contact {
+    color: #fff;
+}
+
+footer .hero .contact p {
+    text-transform: capitalize;
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+footer .hero .contact p span {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+footer .hero .icons {
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer .hero .icons a {
+    margin: 10px;
+}
+.cards .card .img-cart{
+    background-color: var(--transition-color);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        border-radius: 10px 0 0 10px;
+        transition: .3s;
+}
+ .cards .card:hover .img-cart {
+    width: 70px;
+}
+@keyframes down {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(45deg);
+        top: 5px;
+    }
+}
+
+.menu.change .down {
+    animation: up .4s ease-in-out forwards;
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes up {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-45deg);
+        top: -5px;
+    }
+}
+
+.menu div {
+    width: 40px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.menu div:first-child {
+    position: relative;
+    top: -5px;
+}
+
+.menu div:last-child {
+    position: relative;
+    top: 5px;
+}
+.cart-box {
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    left: 55%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #d1d1d1;
+    border-radius: 20px;
+    z-index: 6;
+}
+
+.cart-box .hero {
+    display: flex;
+    margin-top: 70px;
+    padding: 20px;
+}
+
+.cart-box .exit {
+    width: 60px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.cart-box .hero .img-box {
+    width: 50%;
+    border: var(--card-border) 2px solid;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.cart-box .hero .img-box img {
+    width: 100%;
+}
+
+.cart-box .hero .text {
+    margin-left: 50px;
+}
+
+.cart-box .hero .text .text-box {
+    text-transform: capitalize;
+    width: 90%;
+}
+
+.cart-box .hero .text .text-box p {
+    line-height: 30px;
+}
+
+.cart-box .hero .text .buy {
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.cart-box .hero .text .buy input {
+    width: 50px;
+    padding: 8px 0;
+    border: var(--transition-color) 2px solid;
+    outline: none;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.cart-box .hero .text .buy button {
+    padding: 10px;
+    height: 40px;
+    width: 150px;
+    border: none;
+    outline: none;
+    background-color: var(--transition-color);
+    border-radius: 10px;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.cart-box .hero .text .buy button span {
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+}
+
+.box {
+    position: absolute;
+    left: 50%;
+    top: -70%;
+    transform: translate(-50%);
+}
+
+.cartanimation {
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translatey(-50%);
+}
+.pricebox {
+    background-color: var(--card-border);
+    padding: 10px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 10px;
+}
+.hidebuycar {
+    display: none;
+}
+
+
+@media (min-width:661px) and (max-width:900px) {
+    main nav {
+        flex-direction: column;
+    }
+
+    main nav ul {
+        width: 80%;
+    }
+
+    footer .hero .contact {
+        display: none;
+    }
+           .showing {
+               top: 35px;
+           }
+    
+           .cartitem {
+               top: 0;
+           }
+}
+@media (max-width:660px) {
+    main nav ul {
+        margin-top: 10px;
+        display: block;
+        position: absolute;
+        top: 3%;
+        left: 0;
+        background: #fff;
+        width: 250px;
+        min-height: 83.91vh;
+        z-index: 2000;
+        padding-top: 8%;
+        border-radius: 0 15px 15px 0;
+    }
+
+    main nav {
+        width: 100%;
+    }
+
+    main nav .logo {
+        margin: auto;
+    }
+
+    main nav ul li {
+        margin: 60px 10px;
+    }
+
+    main nav ul li a {
+        color: #000;
+        margin: 20px;
+    }
+
+    i{
+        visibility: visible;
+        color: #fff;
+    }
+
+    main nav ul .account {
+        background-color: #000;
+        padding: 20px;
+        border-radius: 8px;
+        position: absolute;
+        bottom: 0px;
+        width: 80%;
+    }
+
+    main nav ul .account a {
+        color: #fff;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .hideul {
+        display: none;
+    }
+
+    footer .hero .contact {
+        display: none;
+    }
+
+    footer .hero .icons {
+        flex-direction: column;
+    }
+         .showing {
+             top: 37px;
+         }
+    
+         .cartitem {
+             top: 105px;
+         }
+}
